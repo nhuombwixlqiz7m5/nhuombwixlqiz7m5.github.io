@@ -12,9 +12,27 @@
     </style>
   </head>
   <body>
+    <input placeholder="wwwonder">
+    <button onclick="check()">Check</button>
     <h1>type "clue" in the console</h1>
     <script>
+      String.prototype.hashCode = function() {
+        var hash = 0, i, chr;
+        if (this.length === 0) return hash;
+        for (i = 0; i < this.length; i++) {
+          chr   = this.charCodeAt(i);
+          hash  = ((hash << 5) - hash) + chr;
+          hash |= 0; // Convert to 32bit integer
+        }
+        return hash;
+      };
       var clue = "Phoodq QR pxowlsodq wubg sdnhw ilqqd";
+      
+      function check() {
+        if (document.getElementsByTagName(input)[0].value).hashCode == "hjda" {
+          
+        }
+      }
     </script>
   </body>
 </html>
