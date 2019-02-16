@@ -16,11 +16,11 @@
     <button onclick="check()">Check</button>
     <h1>type "clue" in the console</h1>
     <script>
-      String.prototype.hashCode = function() {
+      function hashCode(s) {
         var hash = 0, i, chr;
-        if (this.length === 0) return hash;
-        for (i = 0; i < this.length; i++) {
-          chr   = this.charCodeAt(i);
+        if (s.length === 0) return hash;
+        for (i = 0; i < s.length; i++) {
+          chr   = s.charCodeAt(i);
           hash  = ((hash << 5) - hash) + chr;
           hash |= 0; // Convert to 32bit integer
         }
@@ -29,7 +29,7 @@
       var clue = "Phoodq QR pxowlsodq wubg sdnhw ilqqd";
       
       function check() {
-        if (document.getElementsByTagName(input)[0].value).hashCode == "hjda" {
+        if hashCode(document.getElementsByTagName(input)[0].value) == "hjda" {
           
         }
       }
